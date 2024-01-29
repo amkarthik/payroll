@@ -6,6 +6,7 @@ from odoo.tests.common import Form
 
 from .common import TestPayslipBase
 
+import time
 
 class TestWorkedDays(TestPayslipBase):
     def setUp(self):
@@ -59,6 +60,16 @@ class TestWorkedDays(TestPayslipBase):
 
         # I put all eligible contracts (including Richard's) in an "open" state
         self.apply_contract_cron()
+
+        self.env['hr.leave.allocation'].create({
+            'name': 'Annual Time Off',
+            'employee_id': self.richard_emp.id,
+            'holiday_status_id': self.holiday_type.id,
+            'number_of_days': 20,
+            'state': 'confirm',
+            'date_from': time.strftime('%Y-01-01'),
+            'date_to': time.strftime('%Y-12-31'),
+        })
 
         # Create the leave
         self.LeaveRequest.create(

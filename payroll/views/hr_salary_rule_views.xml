@@ -8,7 +8,7 @@
                 <field name="name" />
                 <field name="code" decoration-bf="1" />
                 <field name="category_id" widget="badge" />
-                <field name="sequence" invisible="1" />
+                <field name="sequence" column_invisible="1" />
                 <field name="register_id" />
             </tree>
         </field>
@@ -55,7 +55,7 @@
             <tree>
                 <field name="name" />
                 <field name="code" />
-                <field name="category_id" invisible="True" />
+                <field name="category_id" column_invisible="True" />
                 <field
                     name="company_id"
                     groups="base.group_multi_company"

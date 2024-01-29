@@ -25,8 +25,8 @@
                     groups="base.group_multi_company"
                     options="{'no_create': True}"
                 />
-                <field name="payslip_run_id" invisible="1" />
-                <field name="message_needaction" invisible="1" />
+                <field name="payslip_run_id" column_invisible="1" />
+                <field name="message_needaction" column_invisible="1" />
             </tree>
         </field>
     </record>
@@ -158,7 +158,7 @@
                                 name="date_from"
                                 widget="daterange"
                                 class="oe_inline"
-                                options="{'related_end_date': 'date_to'}"
+                                options="{'end_date_field': 'date_to'}"
                                 readonly="state != 'draft'"
                             />
                             -
@@ -166,7 +166,7 @@
                                 name="date_to"
                                 widget="daterange"
                                 class="oe_inline"
-                                options="{'related_start_date': 'date_from'}"
+                                options="{'start_date_field': 'date_from'}"
                                 readonly="state != 'draft'"
                             />
                         </div>
@@ -178,7 +178,7 @@
                         />
                         <field name="number" />
                         <field name="struct_id" required="contract_id" />
-                        <field name="name" />
+                        <field name="name" force_save="1"/>
                         <field name="credit_note" readonly="state != 'draft'" />
                         <field name="refunded_id" invisible="not refunded_id" />
                         <field name="compute_date" invisible="not compute_date" />
@@ -200,7 +200,7 @@
                                         domain="[('employee_id','=',parent.employee_id),('date_start','&lt;=',parent.date_to),'|',('date_end','&gt;=',parent.date_from),('date_end','=',False)]"
                                         context="{'default_employee_id': parent.employee_id}"
                                     />
-                                    <field name="sequence" invisible="True" />
+                                    <field name="sequence" column_invisible="True" />
                                 </tree>
                                 <form string="Worked Day">
                                     <group col="4">
@@ -230,7 +230,7 @@
                                         domain="[('employee_id','=',parent.employee_id),('date_start','&lt;=',parent.date_to),'|',('date_end','&gt;=',parent.date_from),('date_end','=',False)]"
                                         context="{'default_employee_id': parent.employee_id}"
                                     />
-                                    <field name="sequence" invisible="True" />
+                                    <field name="sequence" column_invisible="True" />
                                 </tree>
                                 <form string="Payslip Line">
                                     <group col="4">
@@ -267,15 +267,15 @@
                                     create="false"
                                     delete="false"
                                 >
-                                    <field name="appears_on_payslip" invisible="1" />
+                                    <field name="appears_on_payslip" column_invisible="1" />
                                     <field name="sequence" optional="hide" />
-                                    <field name="parent_line_id" invisible="1" />
-                                    <field name="parent_rule_id" invisible="1" />
+                                    <field name="parent_line_id" column_invisible="1" />
+                                    <field name="parent_rule_id" column_invisible="1" />
                                     <field name="code" readonly="1" />
                                     <field
                                         name="salary_rule_id"
                                         readonly="1"
-                                        invisible="1"
+                                        column_invisible="1"
                                     />
                                     <field name="category_id" readonly="1" />
                                     <field name="name" />

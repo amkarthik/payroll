@@ -47,7 +47,7 @@
                     widget="badge"
                     optional="show"
                 />
-                <field name="message_needaction" invisible="1" />
+                <field name="message_needaction" column_invisible="1" />
                 <field
                     name="company_id"
                     groups="base.group_multi_company"
@@ -140,7 +140,7 @@
                                     name="date_start"
                                     widget="daterange"
                                     class="oe_inline"
-                                    options="{'related_end_date': 'date_end'}"
+                                    options="{'end_date_field': 'date_end'}"
                                     readonly="state != 'draft'"
                                 />
                                 -
@@ -148,7 +148,7 @@
                                     name="date_end"
                                     widget="daterange"
                                     class="oe_inline"
-                                    options="{'related_start_date': 'date_start'}"
+                                    options="{'start_date_field': 'date_start'}"
                                     readonly="state != 'draft'"
                                 />
                             </div>
