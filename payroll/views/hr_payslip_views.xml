@@ -178,7 +178,7 @@
                         />
                         <field name="number" />
                         <field name="struct_id" required="contract_id" />
-                        <field name="name" force_save="1"/>
+                        <field name="name" force_save="1" />
                         <field name="credit_note" readonly="state != 'draft'" />
                         <field name="refunded_id" invisible="not refunded_id" />
                         <field name="compute_date" invisible="not compute_date" />
@@ -267,7 +267,10 @@
                                     create="false"
                                     delete="false"
                                 >
-                                    <field name="appears_on_payslip" column_invisible="1" />
+                                    <field
+                                        name="appears_on_payslip"
+                                        column_invisible="1"
+                                    />
                                     <field name="sequence" optional="hide" />
                                     <field name="parent_line_id" column_invisible="1" />
                                     <field name="parent_rule_id" column_invisible="1" />
