@@ -161,14 +161,6 @@
                                 options="{'end_date_field': 'date_to'}"
                                 readonly="state != 'draft'"
                             />
-                            -
-                            <field
-                                name="date_to"
-                                widget="daterange"
-                                class="oe_inline"
-                                options="{'start_date_field': 'date_from'}"
-                                readonly="state != 'draft'"
-                            />
                         </div>
                         <field
                             name="contract_id"
@@ -177,7 +169,7 @@
                             readonly="state != 'draft'"
                         />
                         <field name="number" />
-                        <field name="struct_id" required="contract_id" />
+                        <field name="struct_id" required="contract_id" force_save="1"/>
                         <field name="name" force_save="1" />
                         <field name="credit_note" readonly="state != 'draft'" />
                         <field name="refunded_id" invisible="not refunded_id" />
