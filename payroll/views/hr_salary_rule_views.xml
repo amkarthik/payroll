@@ -94,6 +94,7 @@
                     <group name="principal">
                         <group>
                             <field name="code" required="require_code_and_category" />
+                            <field name="report_name" />
                             <field name="sequence" />
                             <field name="register_id" />
                             <field

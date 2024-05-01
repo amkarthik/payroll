@@ -11,6 +11,7 @@ class HrSalaryRule(models.Model):
     _description = "Salary Rule"
 
     name = fields.Char(required=True, translate=True)
+    report_name = fields.Char(translate=True)
     code = fields.Char(
         help="The code of salary rules can be used as reference in computation "
         "of other rules. In that case, it is case sensitive.",

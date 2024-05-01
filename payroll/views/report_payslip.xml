@@ -96,7 +96,12 @@
                                         <span t-field="line.code" />
                                     </td>
                                     <td>
-                                        <span t-field="line.name" />
+                                        <t t-if="line.salary_rule_id.report_name">
+                                            <span t-field="line.salary_rule_id.report_name" />
+                                        </t>
+                                        <t t-else="">
+                                            <span t-field="line.name" />
+                                        </t>
                                     </td>
                                     <td>
                                         <span t-field="line.quantity" />
